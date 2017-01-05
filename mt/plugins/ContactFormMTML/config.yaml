@@ -1,0 +1,17 @@
+name: ContactFormMTML
+id:   ContactFormMTML
+key:  contactformmtml
+version: 0.1
+schema_version: 0.1
+author_name: Alfasado Inc.
+author_link: https://alfasado.net/
+description: <__trans phrase="Allow manage ContactForm base template by each forms.">
+l10n_class: ContactFormMTML::L10N
+callbacks:
+    init_request: $contactformmtml::ContactFormMTML::Callbacks::_init_tags
+    init_app: $contactformmtml::ContactFormMTML::Callbacks::_init_tags
+    MT::App::CMS::template_param.edit_contactformgroup: $contactformmtml::ContactFormMTML::Callbacks::_param_edit_contactformgroup
+object_types:
+    contactformgroup:
+        base_template_id: integer
+
